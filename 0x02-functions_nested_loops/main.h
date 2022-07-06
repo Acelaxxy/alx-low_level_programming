@@ -6,6 +6,7 @@ int _putchar(char c);
 void print_putchar(void);
 void print_alphabet(void);
 void print_alphabet_x10(void);
-int _islower(int i);
+int _islower(int c);
+int test_isalpha(int c);
 
 #endif
