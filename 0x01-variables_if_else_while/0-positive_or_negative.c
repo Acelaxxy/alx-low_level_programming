@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 /**
  * main - assign random number to variable
  *
@@ -7,7 +10,7 @@
 
 int main(void)
 {
-	int n;
+	int n = 0;
 
 	if (n > 0)
 		printf("%d is positive \n", n);
