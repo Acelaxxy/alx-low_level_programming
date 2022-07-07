@@ -19,10 +19,10 @@ int main(void)
 	{
 		if (j != 20365011074)
 		{
-			printf("%lu", j);
+			printf("%ld \n ", j);
 		} else
 		{
-			printf(", %lu \n", j);
+			printf(", ");
 		}
 		next = j + k;
 		j = k;
