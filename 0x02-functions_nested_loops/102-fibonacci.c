@@ -22,7 +22,7 @@ int main(void)
 			printf("%lu", j);
 		} else
 		{
-			printf("%lu, \n", j);
+			printf(", %lu \n", j);
 		}
 		next = j + k;
 		j = k;
