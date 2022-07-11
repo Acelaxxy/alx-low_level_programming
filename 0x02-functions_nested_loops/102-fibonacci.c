@@ -9,24 +9,25 @@
 
 int main(void)
 {
-	long int i, j, k, next;
+	int i;
+	unsigned long j, k, next;
 
-	j = 1;
+	j = 0;
 
-	k = 2;
+	k = 1;
 
-	for (i = 1; i <= 50; ++i)
+	for (i = 1; i < 50; i++)
 	{
-		if (j != 20365011074)
-		{
-			printf("%ld \n ", j);
-		} else
-		{
-			printf(", ");
-		}
 		next = j + k;
+		printf("%lu", next);
+
 		j = k;
 		k = next;
+
+		if (i == 49)
+			printf("\n");
+		else
+			printf(", ");
 	}
 
 	return (0);
