@@ -9,17 +9,20 @@
 
 void more_numbers(void)
 {
-	int c;
-	int x;
+	int row, count, num;
 
-	for (c = 1; c <= 10; c++)
+	for (row = 1; row <= 10; ++row)
 	{
-		for (x = 0; x <= 14; x++)
+		for (count = 0; count <= 14; ++count)
 		{
-			if (x >= 10)
-				_putchar('1');
-			_putchar(x % 10 + '0');
-		}
+			num = count;
+			if (count > 9)
+			{
+				_putchar(1 + 48);
+				num = count % 10;
+			}
+			_putchar(num + 48);
+			}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
