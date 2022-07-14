@@ -9,14 +9,16 @@ void print_number(int n)
 {
 	unsigned int j = n;
 
-	if (n < 0)
+	/* first check if it is negative*/
+	if (n	< 0)
 	{
-		_putchat('-');
+		_putchar('-');
 		j = -j;
 	}
-
+	/* print first few digits*/
 	if ((j / 10) > 0)
 		print_number(j / 10);
+	/*prints last digit*/
 
 		_putchar((j % 10) + '0');
 }
