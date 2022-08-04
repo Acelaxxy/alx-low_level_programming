@@ -11,33 +11,38 @@
  * Return: If the function fails - NULL.
  * Otherwise - a pointer to the concatenated space in memory.
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *concat;
-	unsigned int len = n, index;
+	unsigned int x, y, z;
+	char *s;
 
 	if (s1 == NULL)
-		s1 = " ";
-
+	{
+		x = 0;
+	}
+	else
+	{
+		for (x = 0; s1[x]; ++x)
+			;
+	}
 	if (s2 == NULL)
-		s2 = " ";
-
-	for (index = 0; s1[index]; index++)
-		len++;
-	concat = malloc(sizeof(char) * (len + 1));
-
-	if (concat == NULL)
+	{
+		y = 0;
+	}
+	else
+	{
+		for (y = 0; s2[y]; ++y)
+			;
+	}
+	if (y > n)
+		y = n;
+	s = malloc(sizeof(char) * (x + y + 1));
+	if (s == NULL)
 		return (NULL);
-
-	len = 0;
-
-	for (index = 0; s1[index]; index++)
-		concat[len++] = s2[index];
-
-	for (index = 0; s2[index] && index < n; index++)
-		concat[len++] = s2[index];
-
-	concat[len] = '\0';
-	return (concat);
+	for (z = 0; z < x; z++)
+		s[z] = s1[z];
+	for (z = 0; z < y; z++)
+		s[z + x] = s2[z];
+	s[x + y] = '\0';
+	return (s);
 }
